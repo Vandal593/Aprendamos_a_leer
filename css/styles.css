@@ -1,0 +1,357 @@
+.game-screen,
+#inicio {
+    text-align: center;
+    padding: 0.5rem 0;
+    min-height: 75vh;
+}
+
+#niveles h1,
+#inicio h1,
+#categoriaSeleccionada,
+#nivel5,
+#categoriaCuestionario {
+    color: white;
+    font-size: 4rem;
+    text-shadow: 2px 2px 4px #000000;
+    margin-bottom: 2rem;
+}
+
+.menu-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu-options button {
+    font-family: 'Comic Sans MS', sans-serif;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 0px;
+    font-size: 50px;
+    margin: 10px 0;
+    padding: 10px 20px;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.menu-options button:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Colores específicos para cada botón */
+.menu-options button:nth-child(1) {
+    background-color: #8bc34a; /* Verde para 'Familia' */
+}
+
+.menu-options button:nth-child(2) {
+    background-color: #03a9f4; /* Azul para 'Animales' */
+}
+
+.menu-options button:nth-child(3) {
+    background-color: #ffc107; /* Amarillo para 'Colores' */
+}
+
+.menu-options button:nth-child(4) {
+    background-color: #ff9800; /* Naranja para 'Frutas' */
+}
+/* Nivel 4 */
+.menu-options button:nth-child(5) {
+    background-color: #f44336;
+}
+
+/* Nivel 5 */
+
+body {
+    background-image: url('../images/forest.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* Hace que la imagen de fondo se quede fija en su lugar */
+    font-family: 'Comic Sans MS', sans-serif;
+    padding-bottom: 60px;
+    text-align: center;
+    background-color: #F8FAF3;
+    margin: 0;
+}
+
+/* Responsive design */
+@media only screen and (max-width: 600px) {
+    #inicio button {
+        font-size: 24px;
+        padding: 15px 30px;
+    }
+
+    #inicio h1 {
+        font-size: 40px;
+    }
+}
+
+
+#tarjetasContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tarjeta {
+    background-color: white;
+    /* Fondo azul */
+    color: red;
+    /* Texto blanco */
+    border: 2px solid black;
+    /* Borde más oscuro */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    padding: 10px;
+    margin: 15px;
+    font-size: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* Efecto de transición */
+}
+
+/* Estilos del cuestionario */
+
+
+#puntaje {
+    font-size: 20px;
+    color: #ddd;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Estilos para la categoría-contenedor */
+.categoria-contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    /* Bordes redondeados */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* Sombra suave */
+    padding: 20px;
+    /* Espaciado interior */
+    margin: 20px;
+    /* Espaciado exterior */
+}
+
+/* Estilos para contenido-flex */
+.contenido-flex {
+    display: flex;
+    justify-content: space-around;
+    /* Espaciado entre elementos */
+    align-items: center;
+    /* Centrado vertical */
+    flex-wrap: wrap;
+    /* Permitir envoltura */
+    gap: 10px;
+    /* Espaciado entre elementos al envolver */
+}
+
+/* Estilos para las imágenes y las palabras */
+.imagenes,
+.palabras {
+    display: flex;
+    flex-direction: row;
+    /* Alineación en columna */
+    align-items: center;
+    /* Centrado horizontal */
+    gap: 1px;
+    /* Espaciado entre elementos */
+}
+
+/* Estilos para cada imagen y palabra individual */
+.imagenes img,
+.palabras .palabra {
+    border: 2px dashed rgb(255, 255, 255);
+    /* Borde con estilo de línea discontinua verde */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    padding: 10px;
+    /* Espaciado interior */
+    margin: 5px;
+    /* Espaciado exterior */
+    user-select: none;
+    /* Desactivar la selección de texto */
+}
+
+.imagenes img {
+    max-width: 10em;
+    /* Máximo ancho para las imágenes */
+    height: auto;
+    /* Altura automática para mantener la proporción */
+}
+
+.palabras .palabra {
+    border: 2px dashed black;
+    font-size: 2em;
+    background-color: rgb(255, 255, 255);
+    /* Fondo blanco para las palabras */
+    cursor: grab;
+    /* Cursor tipo 'agarre' */
+    text-align: center;
+    /* Centrar texto */
+    min-width: 120px;
+    /* Ancho mínimo para las palabras */
+}
+
+/* Media query para responsividad */
+@media (max-width: 768px) {
+
+    .imagenes,
+    .palabras {
+        flex-direction: column;
+        /* Alineación en columna */
+    }
+
+    .contenido-flex {
+        flex-direction: row;
+        /* Apilar verticalmente en pantallas pequeñas */
+    }
+}
+
+#botonAudio {
+    position: fixed;
+    /* Posicionamiento fijo en la pantalla */
+    top: 10px;
+    /* Separación del borde superior */
+    right: 10px;
+    /* Separación del borde derecho */
+    z-index: 1000;
+    /* Asegúrate de que esté sobre otros elementos */
+    background: none;
+    /* Fondo transparente o ajusta según prefieras */
+    border: none;
+    /* Sin borde */
+    cursor: pointer;
+}
+
+#iconoAudio {
+    font-size: 5em;
+    /* Hace el ícono más grande */
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #a4e67b;
+    /* Color de fondo */
+    display: flex;
+    /* Usa flexbox */
+    justify-content: center;
+    /* Centra los elementos horizontalmente */
+    align-items: center;
+    /* Centra los elementos verticalmente */
+    padding: 10px 0;
+    /* Espacio arriba y abajo del contenido */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    /* Sombra para dar sensación de elevación */
+    flex-wrap: wrap;
+    /* Permite que los botones se envuelvan si hay muchos */
+}
+
+.footer button {
+    background: transparent;
+    /* Fondo transparente */
+    border: none;
+    /* Sin bordes */
+    font-size: 4em;
+    /* Tamaño de los íconos */
+    color: white;
+    /* Color blanco */
+    cursor: pointer;
+    /* Cursor de mano */
+}
+
+/* Estilos para los botones al pasar el mouse */
+.footer button:hover {
+    color: #ddd;
+    /* Color más claro al pasar el mouse */
+}
+
+#contenedor-imagen-nivel5 img {
+    width: 300px;
+    /* Establece el ancho que desees */
+    height: 200px;
+    /* Establece la altura que desees */
+    object-fit: contain;
+    /* Esto asegura que la imagen se ajuste al contenedor sin distorsionarse */
+    border-radius: 10px;
+    /* Bordes redondeados de la imagen */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Sombra suave para la imagen */
+    margin-bottom: 1rem;
+    /* Espacio debajo de la imagen */
+}
+
+
+.dropzones-nivel5 {
+    display: flex;
+    justify-content: center;
+    /* Centrar los dropzones horizontalmente */
+    flex-wrap: wrap;
+    /* Permitir que los elementos pasen a la siguiente línea si no caben */
+    gap: 1rem;
+    /* Espacio entre los dropzones */
+    margin-bottom: 1rem;
+    /* Espacio debajo de los dropzones */
+}
+
+.dropzone-nivel5 {
+    width: 100px;
+    /* Ancho fijo */
+    height: 100px;
+    /* Altura fija */
+    border-radius: 50%;
+    /* Hacerlos circulares */
+    background-color: lightcoral;
+    /* Color rosa claro */
+    display: flex;
+    justify-content: center;
+    /* Centrar el contenido horizontalmente */
+    align-items: center;
+    /* Centrar el contenido verticalmente */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Sombra suave */
+}
+
+
+.oraciones-nivel5 {
+    display: flex;
+    justify-content: center;
+    /* Centrar las oraciones horizontalmente */
+    flex-wrap: wrap;
+    /* Permitir que los elementos pasen a la siguiente línea si no caben */
+    gap: 1rem;
+    /* Espacio entre las oraciones */
+}
+
+.oraciones-nivel5 div {
+    background-color: #ffafcc;
+    /* Color rosa claro */
+    padding: 0.5rem 1rem;
+    /* Espaciado interno */
+    border-radius: 20px;
+    /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Sombra suave */
+    font-size: 1.5rem;
+    /* Tamaño de la fuente */
+    color: #023047;
+    /* Color oscuro para el texto */
+}
+
+
+.confeti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background-color: #f00;
+    z-index: 9999;
+}

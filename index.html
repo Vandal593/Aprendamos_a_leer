@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Palabras</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="images/icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+
+<body>
+    <audio id="audioAmbiente" src="audio/fondo.mp3" loop muted></audio>
+    <button id="botonAudio" onclick="unmuteAudio()">
+        <span id="iconoAudio" role="img" aria-label="Icono de sonido">🔇</span>
+    </button>
+    <!-- Pantalla de niveles -->
+    <div id="niveles" class="game-screen">
+        <h1>Bienvenido al Juego de Palabras</h1>
+        <div class="menu-options">
+            <button class="menu-button" onclick="iniciarNivel('Nivel1')">Nivel 1</button>
+            <button class="menu-button" onclick="iniciarJuego('Nivel2')">Nivel 2</button>
+            <button class="menu-button" onclick="iniciarJuego('Nivel3')">Nivel 3</button>
+            <button class="menu-button" onclick="iniciarJuego('Nivel4')">Nivel 4</button>
+            <button class="menu-button" onclick="iniciarNivel5('Nivel5')">Nivel 5</button>
+            <!-- Agrega más botones para otras categorías según sea necesario -->
+        </div>
+    </div>
+
+    <!-- Pantalla de inicio -->
+    <div id="inicio" style="display: none;">
+        <h1>Escoje una categoria</h1>
+        <div class="menu-options">
+            <button onclick="iniciarJuego('Familia')">Familia</button>
+            <button onclick="iniciarJuego('Animales')">Animales</button>
+            <button onclick="iniciarJuego('Colores')">Colores</button>
+            <button onclick="iniciarJuego('Frutas')">Frutas</button>
+        </div>
+    </div>
+
+    <!-- Contenido del juego -->
+    <div id="juego" style="display: none;">
+        <h1 id="categoriaSeleccionada"></h1>
+        <div id="tarjetasContainer"></div>
+    </div>
+
+    <div id="juego-nivel5" style="display: none;">
+        <h1 id="nivel5">Nivel 5</h1>
+        <div id="contenedor-imagen-nivel5">
+            <!-- La imagen de la fase se cargará aquí -->
+        </div>
+        <div class="dropzones-nivel5">
+        </div>
+        <div class="oraciones-nivel5">
+        </div>
+    </div>
+
+    <!-- Contenedor del cuestionario, inicialmente oculto -->
+    <div id="cuestionario" style="display: none;">
+        <h1 id="categoriaCuestionario"></h1>
+        <div id="puntaje">Puntuación: 0</div>
+        <!-- Categoría 1 -->
+        <div id="Familia" class="categoria-contenedor">
+            <div class="contenido-flex">
+                <div class="imagenes">
+                    <img src="images/Familia/1.png" alt="Imagen 1" class="dropzone"
+                        data-palabra-correcta="palabraFamilia1">
+                    <img src="images/Familia/2.png" alt="Imagen 2" class="dropzone"
+                        data-palabra-correcta="palabraFamilia2">
+                    <img src="images/Familia/3.png" alt="Imagen 3" class="dropzone"
+                        data-palabra-correcta="palabraFamilia3">
+                    <img src="images/Familia/4.png" alt="Imagen 4" class="dropzone"
+                        data-palabra-correcta="palabraFamilia4">
+                    <img src="images/Familia/5.png" alt="Imagen 5" class="dropzone"
+                        data-palabra-correcta="palabraFamilia5">
+                </div>
+                <div class="palabras">
+                    <div id="palabraFamilia1" class="palabra" draggable="true">Mamá</div>
+                    <div id="palabraFamilia2" class="palabra" draggable="true">Papá</div>
+                    <div id="palabraFamilia3" class="palabra" draggable="true">Hermano</div>
+                    <div id="palabraFamilia4" class="palabra" draggable="true">Abuelo</div>
+                    <div id="palabraFamilia5" class="palabra" draggable="true">Bebé</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Categoría 2 -->
+        <div id="Animales" class="categoria-contenedor">
+            <div class="contenido-flex">
+                <div class="imagenes">
+                    <img src="images/Animales/1.png" alt="Imagen 1" class="dropzone"
+                        data-palabra-correcta="palabraAnimales1">
+                    <img src="images/Animales/2.png" alt="Imagen 2" class="dropzone"
+                        data-palabra-correcta="palabraAnimales2">
+                    <img src="images/Animales/3.png" alt="Imagen 3" class="dropzone"
+                        data-palabra-correcta="palabraAnimales3">
+                    <img src="images/Animales/4.png" alt="Imagen 4" class="dropzone"
+                        data-palabra-correcta="palabraAnimales4">
+                    <img src="images/Animales/5.png" alt="Imagen 5" class="dropzone"
+                        data-palabra-correcta="palabraAnimales5">
+                </div>
+                <div class="palabras">
+                    <div id="palabraAnimales1" class="palabra" draggable="true">Armadillo</div>
+                    <div id="palabraAnimales2" class="palabra" draggable="true">Caballito de Mar</div>
+                    <div id="palabraAnimales3" class="palabra" draggable="true">Piraña</div>
+                    <div id="palabraAnimales4" class="palabra" draggable="true">Jaguar</div>
+                    <div id="palabraAnimales5" class="palabra" draggable="true">Burro</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Categoría 3 -->
+        <div id="Colores" class="categoria-contenedor">
+            <div class="contenido-flex">
+                <div class="imagenes">
+                    <img src="images/Colores/1.png" alt="Imagen 1" class="dropzone"
+                        data-palabra-correcta="palabraColores1">
+                    <img src="images/Colores/2.png" alt="Imagen 2" class="dropzone"
+                        data-palabra-correcta="palabraColores2">
+                    <img src="images/Colores/3.png" alt="Imagen 3" class="dropzone"
+                        data-palabra-correcta="palabraColores3">
+                    <img src="images/Colores/4.png" alt="Imagen 4" class="dropzone"
+                        data-palabra-correcta="palabraColores4">
+                    <img src="images/Colores/5.png" alt="Imagen 5" class="dropzone"
+                        data-palabra-correcta="palabraColores5">
+                </div>
+                <div class="palabras">
+                    <div id="palabraColores1" class="palabra" draggable="true">Rojo</div>
+                    <div id="palabraColores2" class="palabra" draggable="true">Azul</div>
+                    <div id="palabraColores3" class="palabra" draggable="true">Verde</div>
+                    <div id="palabraColores4" class="palabra" draggable="true">Amarillo</div>
+                    <div id="palabraColores5" class="palabra" draggable="true">Lila</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Categoría 3 -->
+        <div id="Frutas" class="categoria-contenedor">
+            <div class="contenido-flex">
+                <div class="imagenes">
+                    <img src="images/Frutas/1.png" alt="Imagen 1" class="dropzone"
+                        data-palabra-correcta="palabraFrutas1">
+                    <img src="images/Frutas/2.png" alt="Imagen 2" class="dropzone"
+                        data-palabra-correcta="palabraFrutas2">
+                    <img src="images/Frutas/3.png" alt="Imagen 3" class="dropzone"
+                        data-palabra-correcta="palabraFrutas3">
+                    <img src="images/Frutas/4.png" alt="Imagen 4" class="dropzone"
+                        data-palabra-correcta="palabraFrutas4">
+                    <img src="images/Frutas/5.png" alt="Imagen 5" class="dropzone"
+                        data-palabra-correcta="palabraFrutas5">
+                </div>
+                <div class="palabras">
+                    <div id="palabraFrutas1" class="palabra" draggable="true">Manzana</div>
+                    <div id="palabraFrutas2" class="palabra" draggable="true">Coco</div>
+                    <div id="palabraFrutas3" class="palabra" draggable="true">Granada</div>
+                    <div id="palabraFrutas4" class="palabra" draggable="true">Aguacate</div>
+                    <div id="palabraFrutas5" class="palabra" draggable="true">Mango</div>
+                </div>
+            </div>
+        </div>
+        <!-- Categoría 3 -->
+        <div id="Nivel2" class="categoria-contenedor">
+            <div class="contenido-flex">
+                <div class="imagenes">
+                    <img src="images/Nivel2/1.png" alt="Imagen 1" class="dropzone"
+                        data-palabra-correcta="palabraNive21">
+                    <img src="images/Nivel2/2.png" alt="Imagen 2" class="dropzone"
+                        data-palabra-correcta="palabraNive22">
+                    <img src="images/Nivel2/3.png" alt="Imagen 3" class="dropzone"
+                        data-palabra-correcta="palabraNive23">
+                    <img src="images/Nivel2/4.png" alt="Imagen 4" class="dropzone"
+                        data-palabra-correcta="palabraNive24">
+                    <img src="images/Nivel2/5.png" alt="Imagen 5" class="dropzone"
+                        data-palabra-correcta="palabraNive25">
+                </div>
+                <div class="palabras">
+                    <div id="palabraNive21" class="palabra" draggable="true">Ojos verdes</div>
+                    <div id="palabraNive22" class="palabra" draggable="true">Zapatos celestes</div>
+                    <div id="palabraNive23" class="palabra" draggable="true">Estrella morada</div>
+                    <div id="palabraNive24" class="palabra" draggable="true">Vestido azul</div>
+                    <div id="palabraNive25" class="palabra" draggable="true">Fresa roja</div>
+                </div>
+            </div>
+        </div>
+        <!-- Categoría 3 -->
+        <div id="Nivel3" class="categoria-contenedor">
+            <div class="contenido-flex">
+                <div class="imagenes">
+                    <img src="images/Nivel3/1.jpg" alt="Imagen 1" class="dropzone"
+                        data-palabra-correcta="palabraNive31">
+                    <img src="images/Nivel3/2.jpg" alt="Imagen 2" class="dropzone"
+                        data-palabra-correcta="palabraNive32">
+                    <img src="images/Nivel3/3.jpg" alt="Imagen 3" class="dropzone"
+                        data-palabra-correcta="palabraNive33">
+                    <img src="images/Nivel3/4.jpg" alt="Imagen 4" class="dropzone"
+                        data-palabra-correcta="palabraNive34">
+                    <img src="images/Nivel3/5.jpg" alt="Imagen 5" class="dropzone"
+                        data-palabra-correcta="palabraNive35">
+                </div>
+                <div class="palabras">
+                    <div id="palabraNive31" class="palabra" draggable="true">Papá está durmiendo</div>
+                    <div id="palabraNive32" class="palabra" draggable="true">Jirafa está comiendo</div>
+                    <div id="palabraNive33" class="palabra" draggable="true">Pez es dorado</div>
+                    <div id="palabraNive34" class="palabra" draggable="true">Bebé está jugando</div>
+                    <div id="palabraNive35" class="palabra" draggable="true">Esposa compra comida</div>
+                </div>
+            </div>
+        </div>
+        <!-- Categoría 3 -->
+        <div id="Nivel4" class="categoria-contenedor">
+            <div class="contenido-flex">
+                <div class="imagenes">
+                    <img src="images/Nivel4/1.jpg" alt="Imagen 1" class="dropzone"
+                        data-palabra-correcta="palabraNive41">
+                    <img src="images/Nivel4/2.jpg" alt="Imagen 2" class="dropzone"
+                        data-palabra-correcta="palabraNive42">
+                    <img src="images/Nivel4/3.jpg" alt="Imagen 3" class="dropzone"
+                        data-palabra-correcta="palabraNive43">
+                    <img src="images/Nivel4/4.jpg" alt="Imagen 4" class="dropzone"
+                        data-palabra-correcta="palabraNive44">
+                    <img src="images/Nivel4/5.jpg" alt="Imagen 5" class="dropzone"
+                        data-palabra-correcta="palabraNive45">
+                </div>
+                <div class="palabras">
+                    <div id="palabraNive41" class="palabra" draggable="true">El pájaro canta</div>
+                    <div id="palabraNive42" class="palabra" draggable="true">Los primos tienen juguetes</div>
+                    <div id="palabraNive43" class="palabra" draggable="true">El búfalo está caminando</div>
+                    <div id="palabraNive44" class="palabra" draggable="true">El hámster come frutas</div>
+                    <div id="palabraNive45" class="palabra" draggable="true">Mis abuelos beben jugo de manzana</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <button style="display: none;" id="btnRetroceder" onclick="retrocederFase()">⬅️</button>
+        <button style="display: none;" id="btnAvanzar" onclick="avanzarFase()">➡️</button>
+        <button style="display: none;" id="btnReintentar" onclick="reiniciarCuestionario()">🔄</button>
+        <button style="display: none;" id="btnRegresarCategoria" onclick="regresarACategorias()">☰</button>
+        <button style="display: none;" id="btnRegresarInicio" onclick="regresarInicio()">🏠</button>
+    </div>
+
+    <script src="js/functions.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

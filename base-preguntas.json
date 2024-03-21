@@ -1,0 +1,414 @@
+[
+  {
+    "categoria": "Familia",
+    "fases": [
+      {
+        "fase": 1,
+        "palabras": [
+          "Mamá",
+          "Papá",
+          "Hermano",
+          "Hermana",
+          "Tío"
+        ]
+      },
+      {
+        "fase": 2,
+        "palabras": [
+          "Tía",
+          "Abuela",
+          "Abuelo",
+          "Hijo",
+          "Hija"
+        ]
+      },
+      {
+        "fase": 3,
+        "palabras": [
+          "Bebé",
+          "Esposo",
+          "Esposa",
+          "Nieto",
+          "Nieta"
+        ]
+      },
+      {
+        "fase": 4,
+        "palabras": [
+          "Sobrino",
+          "Sobrina",
+          "Primo",
+          "Prima",
+          "Bisabuelo"
+        ]
+      },
+      {
+        "fase": 5,
+        "palabras": [
+          "Bisabuela",
+          "Yerno",
+          "Nuera",
+          "Suegro",
+          "Suegra"
+        ]
+      }
+    ]
+  },
+  {
+    "categoria": "Animales",
+    "fases": [
+      {
+        "fase": 1,
+        "palabras": [
+          "Armadillo",
+          "Cebra",
+          "León",
+          "Jirafa",
+          "Leopardo"
+        ]
+      },
+      {
+        "fase": 2,
+        "palabras": [
+          "Panda",
+          "Piraña",
+          "Coral",
+          "Estrella de mar",
+          "Caballo de mar"
+        ]
+      },
+      {
+        "fase": 3,
+        "palabras": [
+          "Almeja",
+          "Venado",
+          "Escorpión",
+          "Mula",
+          "Mapache"
+        ]
+      },
+      {
+        "fase": 4,
+        "palabras": [
+          "Alce",
+          "Búfalo",
+          "Avestruz",
+          "Ganso",
+          "Cocodrilo"
+        ]
+      },
+      {
+        "fase": 5,
+        "palabras": [
+          "Anaconda",
+          "Hámster",
+          "Lagartija",
+          "Castor",
+          "Jaguar"
+        ]
+      }
+    ]
+  },
+  {
+    "categoria": "Colores",
+    "fases": [
+      {
+        "fase": 1,
+        "palabras": [
+          "Negro",
+          "Rojo",
+          "Azul",
+          "Blanco",
+          "Verde"
+        ]
+      },
+      {
+        "fase": 2,
+        "palabras": [
+          "Naranja",
+          "Marrón",
+          "Morado",
+          "Lila",
+          "Fucsia"
+        ]
+      },
+      {
+        "fase": 3,
+        "palabras": [
+          "Gris",
+          "Mostaza",
+          "Turquesa",
+          "Dorado",
+          "Plateado"
+        ]
+      },
+      {
+        "fase": 4,
+        "palabras": [
+          "Salmon",
+          "Rosado",
+          "Esmeralda",
+          "Beige",
+          "Crema"
+        ]
+      },
+      {
+        "fase": 5,
+        "palabras": [
+          "Rojo vino",
+          "Celeste",
+          "Amarillo",
+          "Coral",
+          "Lavanda"
+        ]
+      }
+    ]
+  },
+  {
+    "categoria": "Frutas",
+    "fases": [
+      {
+        "fase": 1,
+        "palabras": [
+          "Banana",
+          "Cereza",
+          "Ciruela",
+          "Coco",
+          "Durazno"
+        ]
+      },
+      {
+        "fase": 2,
+        "palabras": [
+          "Frambuesa",
+          "Fresa",
+          "Granada",
+          "Higo",
+          "Kiwi"
+        ]
+      },
+      {
+        "fase": 3,
+        "palabras": [
+          "Lima",
+          "Limón",
+          "Mandarina",
+          "Aguacate",
+          "Mango"
+        ]
+      },
+      {
+        "fase": 4,
+        "palabras": [
+          "Manzana",
+          "Maracuyá",
+          "Melón",
+          "Mora",
+          "Naranja"
+        ]
+      },
+      {
+        "fase": 5,
+        "palabras": [
+          "Papaya",
+          "Pera",
+          "Piña",
+          "Sandía",
+          "Uva"
+        ]
+      }
+    ]
+  },
+  {
+    "categoria": "Nivel2",
+    "fases": [
+      {
+        "fase": 1,
+        "palabras": [
+          "Ojos verdes",
+          "Manzana roja",
+          "Armadillo marrón",
+          "Leopardo amarillo"
+        ]
+      },
+      {
+        "fase": 2,
+        "palabras": [
+          "Kiwi verde",
+          "Coco blanco",
+          "Fresa roja",
+          "Piraña turquesa"
+        ]
+      },
+      {
+        "fase": 3,
+        "palabras": [
+          "Vestido azul",
+          "Zapatos celestes",
+          "Nubes grises",
+          "Coral lila"
+        ]
+      },
+      {
+        "fase": 4,
+        "palabras": [
+          "Almeja dorada",
+          "Hámster bebé",
+          "Papá jirafa",
+          "MoFresa rosadara"
+        ]
+      },
+      {
+        "fase": 5,
+        "palabras": [
+          "Estrella morada",
+          "Cereza negra",
+          "Banana amarilla",
+          "Mamá armadillo"
+        ]
+      }
+    ]
+  },
+  {
+    "categoria": "Nivel3",
+    "fases": [
+      {
+        "fase": 1,
+        "palabras": [
+          "Papá está durmiendo",
+          "Mamá come manzana",
+          "Abuelo tiene uvas "
+        ]
+      },
+      {
+        "fase": 2,
+        "palabras": [
+          "Abuela come sandía",
+          "Bebé está jugando",
+          "Camilo tiene almejas"
+        ]
+      },
+      {
+        "fase": 3,
+        "palabras": [
+          "Jirafa está comiendo",
+          "Pera es verde",
+          "Pez es dorado"
+        ]
+      },
+      {
+        "fase": 4,
+        "palabras": [
+          "Pájaros comen moras",
+          "Esposa compra comida",
+          "Sobrina está corriendo"
+        ]
+      }
+    ]
+  },
+  {
+    "categoria": "Nivel4",
+    "fases": [
+      {
+        "fase": 1,
+        "palabras": [
+          "Mi hermana corta fresas",
+          "El pájaro canta",
+          "Las jirafas están corriendo"
+        ]
+      },
+      {
+        "fase": 2,
+        "palabras": [
+          "Los primos tienen juguetes",
+          "El búfalo está caminando",
+          "El hámster come frutas"
+        ]
+      },
+      {
+        "fase": 3,
+        "palabras": [
+          "Nosotros jugamos con el panda",
+          "Mi hermano y yo jugamos con el perro",
+          "Mis abuelos beben jugo de manzana"
+        ]
+      },
+      {
+        "fase": 4,
+        "palabras": [
+          "A las jirafas les gustan las hojas verdes",
+          "Los alces comen muchas piñas",
+          "El mapache juega con su familia "
+        ]
+      }
+    ]
+  },
+  {
+    "categoria": "Nivel5",
+    "fases": [
+      {
+        "fase": 1,
+        "oraciones": [
+          "Mi",
+          "abuela",
+          "cocina",
+          "galletas",
+          "deliciosas"
+        ],
+        "imagen": "images/Nivel5/1.jpg"
+      },
+      {
+        "fase": 2,
+        "oraciones": [
+          "El",
+          "gato",
+          "es",
+          "suave",
+          "y",
+          "ronronea",
+          "cuando",
+          "le",
+          "acariciamos"
+        ],
+        "imagen": "images/Nivel5/2.jpg"
+      },
+      {
+        "fase": 3,
+        "oraciones": [
+          "Los",
+          "corales",
+          "tienen",
+          "colores",
+          "bonitos"
+        ],
+        "imagen": "images/Nivel5/3.jpg"
+      },
+      {
+        "fase": 4,
+        "oraciones": [
+          "Las",
+          "jirafas",
+          "comen",
+          "hojas",
+          "verdes",
+          "de",
+          "los",
+          "árboles"
+        ],
+        "imagen": "images/Nivel5/4.jpg"
+      },
+      {
+        "fase": 5,
+        "oraciones": [
+          "El",
+          "armadillo",
+          "juega",
+          "con",
+          "una",
+          "pelota"
+        ],
+        "imagen": "images/Nivel5/5.png"
+      }
+    ]
+  }
+]
